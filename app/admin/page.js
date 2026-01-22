@@ -4,18 +4,6 @@ import adminService from "@/src/services/adminService";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Users, Gamepad2, Globe, Dices, ChartBar } from "lucide-react";
 
-const SnakeIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12 text-green-400">
-        <path d="M11 17C8.39278 17 6.11902 15.6263 4.85331 13.5521L6.56237 12.5088C7.49242 14.0329 9.13009 15 11 15C13.7614 15 16 12.7614 16 10C16 8.9463 15.6926 7.96431 15.1607 7.13276L16.8473 6.0538C17.5737 7.18952 18 8.54319 18 10C18 13.866 14.866 17 11 17ZM11 3C9.08965 3 7.45176 3.96709 6.52184 5.49132L4.81286 4.44812C6.07858 2.37373 8.35232 1 10.9594 1H11.0406C13.6477 1 15.9214 2.37373 17.1871 4.44812L15.4782 5.49132C14.5482 3.96709 12.9104 3 11 3Z" />
-    </svg>
-);
-
-const LadderIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12 text-yellow-600">
-        <path d="M6 2H18V22H6V2ZM8 4V7H16V4H8ZM8 9V12H16V9H8ZM8 14V17H16V14H8ZM8 19V20H16V19H8Z" />
-    </svg>
-);
-
 export default function AdminDashboard() {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
@@ -23,13 +11,7 @@ export default function AdminDashboard() {
     useEffect(() => {
         (async () => {
             try {
-                // Simulate API call for demonstration. In production, use adminService.getAnalytics();
-                const res = {
-                    overview: { totalUsers: 7, totalGames: 51, activeRegions: 2, avg_moves_win: 33 },
-                    movement: { total_snakes: 47, total_ladders: 43, avg_moves_win: 33 },
-                    regions: { International: 6, Asia: 1 },
-                    loginsByDay: { '1/16': 6, '1/17': 0, '1/18': 0, '1/19': 0, '1/20': 0, '1/21': 1, '1/22': 1 },
-                };
+                const res = await adminService.getAnalytics();
                 setData(res);
             } finally {
                 setLoading(false);
@@ -50,7 +32,6 @@ export default function AdminDashboard() {
         <div className="min-h-screen bg-[#0b3d34] p-8 text-white">
             <div className="max-w-6xl mx-auto space-y-8">
 
-                {/* Header */}
                 <div className="bg-[#124f46] border border-[#2d6a5f] rounded-lg p-6 text-center shadow-lg">
                     <h1 className="text-4xl font-bold text-yellow-400 flex items-center justify-center gap-3">
                         <span className="text-3xl">🛡️</span> ADMIN DASHBOARD
@@ -58,7 +39,6 @@ export default function AdminDashboard() {
                     <p className="text-slate-300 mt-2">Game Analytics & System Overview</p>
                 </div>
 
-                {/* Overview Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <StatCard icon={<Users className="w-8 h-8" />} title="TOTAL USERS" value={data.overview.totalUsers} color="bg-blue-500/20" />
                     <StatCard icon={<Gamepad2 className="w-8 h-8" />} title="GAMES PLAYED" value={data.overview.totalGames} color="bg-purple-500/20" />
@@ -66,9 +46,7 @@ export default function AdminDashboard() {
                     <StatCard icon={<Dices className="w-8 h-8" />} title="AVG MOVES/WIN" value={data.movement.avg_moves_win} color="bg-red-500/20" />
                 </div>
 
-                {/* Middle Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {/* Regional Distribution */}
                     <Card title="Regional Distribution" icon={<Globe className="w-6 h-6 text-blue-400" />}>
                         <div className="space-y-4 pt-4">
                             {Object.entries(data.regions).map(([region, count]) => (
@@ -88,7 +66,6 @@ export default function AdminDashboard() {
                         </div>
                     </Card>
 
-                    {/* Movement Patterns */}
                     <Card title="Movement Patterns" icon={<ChartBar className="w-6 h-6 text-green-400" />}>
                         <div className="grid grid-cols-2 gap-6 pt-4">
                             <MovementCard icon={"🐍"} label="Snakes Hit" value={data.movement.total_snakes} />
@@ -97,7 +74,6 @@ export default function AdminDashboard() {
                     </Card>
                 </div>
 
-                {/* Login Trends */}
                 <Card title="Login Trends (Last 7 Days)" icon={<ChartBar className="w-6 h-6 text-blue-400" />}>
                     <div className="w-full h-64 mt-4">
                         <ResponsiveContainer width="100%" height="100%">

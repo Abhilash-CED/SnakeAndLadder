@@ -260,7 +260,7 @@ export default function GamePage() {
                     }}
                 />
 
-                {/* <ResumeExitModal
+                <ResumeExitModal
                     isOpen={showResumeExitModal}
                     onResume={() => {
                         setShowResumeExitModal(false);
@@ -278,7 +278,7 @@ export default function GamePage() {
                         setGamePaused(false);
                         router.push('/game1');
                     }}
-                /> */}
+                />
 
                 {winner && (
                     <div className="fixed top-20 left-1/2 -translate-x-1/2 z-40 bg-yellow-500/90 text-white text-3xl font-bold py-4 px-12 rounded-full shadow-2xl animate-bounce">
