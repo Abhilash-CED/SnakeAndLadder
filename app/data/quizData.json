@@ -1,0 +1,138 @@
+{
+  "9": [
+    {
+      "question": "The name saw-scale alludes to the saw-edged shaped scales",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Saw-scaled vipers have elliptical pupils",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Envenoming results in significant neurotoxicity",
+      "options": ["True", "False"],
+      "answer": "False"
+    }
+  ],
+  "10": [
+    {
+      "question": "Russells viper are exceedingly fast and agile movers?",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "question": "Russells viper bite leads to haematotoxic symptoms",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Russells vipers are ovoviviparous",
+      "options": ["True", "False"],
+      "answer": "True"
+    }
+  ],
+  "11": [
+    {
+      "question": "The King cobra is the most venomous species found in India",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "question": "King Cobras are widely distributed throughout the country",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "question": "King cobras thrive in dry arid areas",
+      "options": ["True", "False"],
+      "answer": "False"
+    }
+  ],
+  "12": [
+    {
+      "question": "All cobras have a spectacled mark",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "question": "Cobras bite leads to neurotoxicity",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Cobra bites are usually associated with significant signs of local inflammation and necrosis at the bite site",
+      "options": ["True", "False"],
+      "answer": "True"
+    }
+  ],
+  "13": [
+    {
+      "question": "Most krait bites are nocturnal events",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Krait bite leads to significant local inflammation and necrosis",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "question": "Krait bite causes neurotoxiciy",
+      "options": ["True", "False"],
+      "answer": "True"
+    }
+  ],
+  "14": [
+    {
+      "question": "Hump nosed pit viper bites cause haemotoxicity",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Does it causes significant local reaction and necrosis at the Hump nosed pit viper bite site?",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "The ASV available in India is effective against hump nosed pit viper",
+      "options": ["True", "False"],
+      "answer": "False"
+    }
+  ],
+  "15": [
+    {
+      "question": "It is the commonest cause of death due to Malabar pit viper snakebite in Kerala",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "question": "Bites of Malabar pit viper usually leads to swelling and inflammation without any systemic symptoms",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Bites of Malabar pit viper leads to predominantly neurotoxic symptoms",
+      "options": ["True", "False"],
+      "answer": "False"
+    }
+  ],
+  "16": [
+    {
+      "question": "Sea snakebite is a common cause of bite in Rajasthan",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "question": "Myotoxicity is common with sea snakebite in humans",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "The anti-snake venom available in India is effective against sea snake venom",
+      "options": ["True", "False"],
+      "answer": "False"
+    }
+  ]
+}

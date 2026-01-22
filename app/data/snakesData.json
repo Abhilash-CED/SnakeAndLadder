@@ -1,0 +1,122 @@
+{
+  "98": {
+    "newPosition": 64,
+    "name": "Saw Scaled Viper (Echis carinatus)",
+    "description": "You have been bitten by a Saw Scaled Viper. This species is responsible for more snakebite deaths than all other snake species combined. Saw-scaled vipers are found in the Indian mainland, Pakistan, and Southeast Asia.",
+    "images": [
+      "bg/snakes/98a.jpg",
+      "bg/snakes/98b.jpg"
+    ],
+    "thumbnails": [
+      "bg/snakes/98an.jpg",
+      "bg/snakes/98bn.jpg"
+    ],
+    "sound": "sound/open-hat-snake-100639.mp3",
+    "quizIndex": 9
+  },
+  "95": {
+    "newPosition": 37,
+    "name": "Russells viper (Daboia russelii)",
+    "description": "You have been bitten by a Russells viper. This snake is widely distributed through the Indian mainland and is arguably the major cause of morbidity and mortality related to snakebite envenoming in India.",
+    "images": [
+      "bg/snakes/95a.jpg",
+      "bg/snakes/95b.jpg",
+      "bg/snakes/95c.jpg"
+    ],
+    "thumbnails": [
+      "bg/snakes/95an.jpg",
+      "bg/snakes/95bn.jpg",
+      "bg/snakes/95cn.jpg"
+    ],
+    "sound": "sound/open-hat-snake-100639.mp3",
+    "quizIndex": 10
+  },
+  "88": {
+    "newPosition": 17,
+    "name": "King Cobra (Ophiophagus hannah)",
+    "description": "You have been bitten by a King Cobra. The King Cobra is the longest snake from among the venomous species. Adults could have a length of up to 4-5 metres.",
+    "images": [
+      "bg/snakes/88.jpg"
+    ],
+    "thumbnails": [
+      "bg/snakes/88n.jpg"
+    ],
+    "sound": "sound/kingcobra.mp3",
+    "quizIndex": 11
+  },
+  "79": {
+    "newPosition": 36,
+    "name": "Common Indian Cobra (Naja Naja)",
+    "description": "You have been bitten by a common Indian Cobra. Cobras usually hood when threatened or agitated. The most commonly distributed species have the characteristic spectacle marking on the hood.",
+    "images": [
+      "bg/snakes/79a.jpg",
+      "bg/snakes/79b.jpg",
+      "bg/snakes/79c.jpg"
+    ],
+    "thumbnails": [
+      "bg/snakes/79an.jpg",
+      "bg/snakes/79bn.jpg",
+      "bg/snakes/79cn.jpg"
+    ],
+    "sound": "sound/open-hat-snake-100639.mp3",
+    "quizIndex": 12
+  },
+  "68": {
+    "newPosition": 30,
+    "name": "Common Krait (Bungarus caeruleus)",
+    "description": "You have been bitten by a common Krait. There are many species of kraits distributed across the country. Kraits show characteristic thin striated white twin markings across its length.",
+    "images": [
+      "bg/snakes/68a.jpg",
+      "bg/snakes/68b.jpg"
+    ],
+    "thumbnails": [
+      "bg/snakes/68an.jpg",
+      "bg/snakes/68bn.jpg"
+    ],
+    "sound": "sound/open-hat-snake-100639.mp3",
+    "quizIndex": 13
+  },
+  "42": {
+    "newPosition": 21,
+    "name": "Hump Nosed Pit Viper (Hypnale hypnale)",
+    "description": "You have been bitten by a Hump Nosed Pit Viper. They are typically distributed in the Western Ghats throughout the states of Kerala and Karnataka.",
+    "images": [
+      "bg/snakes/42a.jpg",
+      "bg/snakes/42b.jpg"
+    ],
+    "thumbnails": [
+      "bg/snakes/42an.jpg",
+      "bg/snakes/42bn.jpg"
+    ],
+    "sound": "sound/open-hat-snake-100639.mp3",
+    "quizIndex": 14
+  },
+  "20": {
+    "newPosition": 5,
+    "name": "Malabar Pit Viper (Craspedocephalus malabaricus)",
+    "description": "You have been bitten by a Malabar Pit Viper. It is a small snake commonly seen in the Western Ghats of Kerala, Goa and Karnataka.",
+    "images": [
+      "bg/snakes/20a.jpg",
+      "bg/snakes/20b.jpg"
+    ],
+    "thumbnails": [
+      "bg/snakes/20an.jpg",
+      "bg/snakes/20bn.jpg"
+    ],
+    "sound": "sound/open-hat-snake-100639.mp3",
+    "quizIndex": 15
+  },
+  "15": {
+    "newPosition": 10,
+    "name": "Sea Snake",
+    "description": "You have been bitten by a Sea Snake. All sea snakes are venomous and are identified from the characteristic paddle like flattened tails which helps the snake navigate and swim.",
+    "images": [
+      "bg/snakes/15.jpg"
+    ],
+    "thumbnails": [
+      "bg/snakes/15n.jpg"
+    ],
+    "sound": "sound/open-hat-snake-100639.mp3",
+    "quizIndex": 16
+  }
+}
