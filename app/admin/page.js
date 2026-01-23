@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import adminService from "@/src/services/adminService";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Users, Gamepad2, Globe, Dices, ChartBar } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function AdminDashboard() {
+    const { t } = useTranslation();
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
 
@@ -20,7 +22,7 @@ export default function AdminDashboard() {
     }, []);
 
     if (loading) {
-        return <div className="min-h-screen flex items-center justify-center bg-[#0b3d34] text-white">Loading...</div>;
+        return <div className="min-h-screen flex items-center justify-center bg-[#0b3d34] text-white">{t('admin_loading')}</div>;
     }
 
     const loginChart = Object.entries(data.loginsByDay).map(([date, value]) => ({
@@ -34,20 +36,20 @@ export default function AdminDashboard() {
 
                 <div className="bg-[#124f46] border border-[#2d6a5f] rounded-lg p-6 text-center shadow-lg">
                     <h1 className="text-4xl font-bold text-yellow-400 flex items-center justify-center gap-3">
-                        <span className="text-3xl">🛡️</span> ADMIN DASHBOARD
+                        <span className="text-3xl">🛡️</span> {t('admin_dashboard_title')}
                     </h1>
-                    <p className="text-slate-300 mt-2">Game Analytics & System Overview</p>
+                    <p className="text-slate-300 mt-2">{t('admin_dashboard_subtitle')}</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <StatCard icon={<Users className="w-8 h-8" />} title="TOTAL USERS" value={data.overview.totalUsers} color="bg-blue-500/20" />
-                    <StatCard icon={<Gamepad2 className="w-8 h-8" />} title="GAMES PLAYED" value={data.overview.totalGames} color="bg-purple-500/20" />
-                    <StatCard icon={<Globe className="w-8 h-8" />} title="ACTIVE REGIONS" value={data.overview.activeRegions} color="bg-green-500/20" />
-                    <StatCard icon={<Dices className="w-8 h-8" />} title="AVG MOVES/WIN" value={data.movement.avg_moves_win} color="bg-red-500/20" />
+                    <StatCard icon={<Users className="w-8 h-8" />} title={t('admin_stat_total_users')} value={data.overview.totalUsers} color="bg-blue-500/20" />
+                    <StatCard icon={<Gamepad2 className="w-8 h-8" />} title={t('admin_stat_games_played')} value={data.overview.totalGames} color="bg-purple-500/20" />
+                    <StatCard icon={<Globe className="w-8 h-8" />} title={t('admin_stat_active_regions')} value={data.overview.activeRegions} color="bg-green-500/20" />
+                    <StatCard icon={<Dices className="w-8 h-8" />} title={t('admin_stat_avg_moves_win')} value={data.movement.avg_moves_win} color="bg-red-500/20" />
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <Card title="Regional Distribution" icon={<Globe className="w-6 h-6 text-blue-400" />}>
+                    <Card title={t('admin_section_regional_dist')} icon={<Globe className="w-6 h-6 text-blue-400" />}>
                         <div className="space-y-4 pt-4">
                             {Object.entries(data.regions).map(([region, count]) => (
                                 <div key={region} className="space-y-2">
@@ -66,15 +68,15 @@ export default function AdminDashboard() {
                         </div>
                     </Card>
 
-                    <Card title="Movement Patterns" icon={<ChartBar className="w-6 h-6 text-green-400" />}>
+                    <Card title={t('admin_section_movement_patterns')} icon={<ChartBar className="w-6 h-6 text-green-400" />}>
                         <div className="grid grid-cols-2 gap-6 pt-4">
-                            <MovementCard icon={"🐍"} label="Snakes Hit" value={data.movement.total_snakes} />
-                            <MovementCard icon={"🪜"} label="Ladders Climbed" value={data.movement.total_ladders} />
+                            <MovementCard icon={"🐍"} label={t('admin_movement_snakes_hit')} value={data.movement.total_snakes} />
+                            <MovementCard icon={"🪜"} label={t('admin_movement_ladders_climbed')} value={data.movement.total_ladders} />
                         </div>
                     </Card>
                 </div>
 
-                <Card title="Login Trends (Last 7 Days)" icon={<ChartBar className="w-6 h-6 text-blue-400" />}>
+                <Card title={t('admin_section_login_trends')} icon={<ChartBar className="w-6 h-6 text-blue-400" />}>
                     <div className="w-full h-64 mt-4">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={loginChart}>

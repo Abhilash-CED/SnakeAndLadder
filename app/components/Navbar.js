@@ -4,6 +4,7 @@ import React from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import authService from '../../src/services/authService';
+import { LogOut, User } from 'lucide-react';
 
 const Navbar = () => {
     const router = useRouter();
@@ -46,9 +47,9 @@ const Navbar = () => {
                         onClick={() => router.push('/game1')}
                     >
                         <span className="text-2xl animate-bounce">🎲</span>
-                        <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        <p className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                             {t('navbar_brand')}
-                        </span>
+                        </p>
                     </div>
 
                     {/* Right Side */}
@@ -81,16 +82,16 @@ const Navbar = () => {
                                         className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-red-600/20 text-red-400 hover:bg-red-600/30 transition border border-red-500/30 font-medium text-sm"
                                         onClick={() => router.push('/admin')}
                                     >
-                                        <span>🛡️</span>
+                                        <Shield />
                                         <span className="hidden sm:inline">{t('navbar_admin')}</span>
                                     </button>
                                 )}
 
                                 <div
-                                    className="flex items-center gap-2 cursor-pointer px-3 py-1.5 rounded-md hover:bg-white/5 transition"
+                                    className="flex items-center gap-2 border border-slate-600 cursor-pointer px-3 py-1 rounded-md hover:bg-white/5 transition"
                                     onClick={() => router.push('/profile')}
                                 >
-                                    <span className="text-xl bg-slate-700 rounded-full p-1">👤</span>
+                                    <User className='text-xs' />
                                     <span className="font-medium text-slate-200 hidden sm:inline">{user.username}</span>
                                 </div>
 
@@ -98,7 +99,7 @@ const Navbar = () => {
                                     className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-700 hover:bg-slate-600 text-slate-300 transition text-sm font-medium"
                                     onClick={handleLogout}
                                 >
-                                    <span>🚪</span>
+                                    <LogOut />
                                     <span className="hidden sm:inline">{t('navbar_logout')}</span>
                                 </button>
                             </div>

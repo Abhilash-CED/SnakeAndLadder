@@ -287,7 +287,7 @@ export default function GamePage() {
                 )}
 
                 {/* Left Side: Board */}
-                <div className="flex-grow w-full max-w-[670px] flex-shrink-0">
+                <div className="flex-grow w-full max-w-[600px] flex-shrink-0">
                     <Board p1Position={p1sum} p2Position={p2sum} />
                 </div>
 

@@ -3,6 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 
 import { useTranslation } from 'react-i18next';
+import { Play } from 'lucide-react';
 // ...
 
 export default function GameLandingPage() {
@@ -12,14 +13,14 @@ export default function GameLandingPage() {
     return (
         <div className="min-h-[calc(100vh-4rem)] bg-slate-900 bg-[url('/bg/gamebg.jpg')] bg-cover bg-center flex flex-col items-center justify-center p-4 relative overflow-hidden">
             {/* Background with overlay */}
-            <div className="absolute inset-0 bg-[url('/bg/gamebg.jpg')] bg-cover bg-center opacity-30"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900"></div>
+            <div className="absolute inset-0 bg-[url('/bg/gamebg.jpg')] bg-cover bg-center opacity-90"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900 opacity-70"></div>
 
             <div className="relative z-10 max-w-4xl w-full text-center space-y-12">
 
                 {/* Hero Section */}
                 <div className="animate-in fade-in slide-in-from-bottom-10 duration-700">
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 drop-shadow-2xl mb-6">
+                    <h1 className="text-5xl md:text-7xl pb-5 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 drop-shadow-2xl mb-6">
                         {t('game_landing_title')}
                     </h1>
                     <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -57,9 +58,8 @@ export default function GameLandingPage() {
                         onClick={() => router.push('/game')}
                         className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-blue-600 font-lg rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/50 ring-offset-2 focus:ring-2 ring-blue-400"
                     >
-                        <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
                         <span className="relative flex items-center gap-3 text-xl">
-                            <span>▶</span>
+                            <Play />
                             Start Game
                         </span>
                     </button>
