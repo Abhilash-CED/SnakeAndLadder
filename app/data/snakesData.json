@@ -1,6 +1,6 @@
 {
   "98": {
-    "newPosition": 64,
+    "path": [98, 84, 77, 64],
     "name": "Saw Scaled Viper (Echis carinatus)",
     "description": "You have been bitten by a Saw Scaled Viper. This species is responsible for more snakebite deaths than all other snake species combined. Saw-scaled vipers are found in the Indian mainland, Pakistan, and Southeast Asia.",
     "images": [
@@ -15,7 +15,7 @@
     "quizIndex": 9
   },
   "95": {
-    "newPosition": 37,
+   "path": [95,75,56,37],
     "name": "Russells viper (Daboia russelii)",
     "description": "You have been bitten by a Russells viper. This snake is widely distributed through the Indian mainland and is arguably the major cause of morbidity and mortality related to snakebite envenoming in India.",
     "images": [
@@ -32,7 +32,7 @@
     "quizIndex": 10
   },
   "88": {
-    "newPosition": 17,
+    "path": [88, 54,34,17],
     "name": "King Cobra (Ophiophagus hannah)",
     "description": "You have been bitten by a King Cobra. The King Cobra is the longest snake from among the venomous species. Adults could have a length of up to 4-5 metres.",
     "images": [
@@ -45,7 +45,7 @@
     "quizIndex": 11
   },
   "79": {
-    "newPosition": 36,
+    "path": [79,60,43,36],
     "name": "Common Indian Cobra (Naja Naja)",
     "description": "You have been bitten by a common Indian Cobra. Cobras usually hood when threatened or agitated. The most commonly distributed species have the characteristic spectacle marking on the hood.",
     "images": [
@@ -62,7 +62,7 @@
     "quizIndex": 12
   },
   "68": {
-    "newPosition": 30,
+    "path": [68,51, 48,30],
     "name": "Common Krait (Bungarus caeruleus)",
     "description": "You have been bitten by a common Krait. There are many species of kraits distributed across the country. Kraits show characteristic thin striated white twin markings across its length.",
     "images": [
@@ -77,7 +77,7 @@
     "quizIndex": 13
   },
   "42": {
-    "newPosition": 21,
+    "path": [42, 39, 22, 21],
     "name": "Hump Nosed Pit Viper (Hypnale hypnale)",
     "description": "You have been bitten by a Hump Nosed Pit Viper. They are typically distributed in the Western Ghats throughout the states of Kerala and Karnataka.",
     "images": [
@@ -92,7 +92,7 @@
     "quizIndex": 14
   },
   "20": {
-    "newPosition": 5,
+    "path": [20, 19, 5,4],
     "name": "Malabar Pit Viper (Craspedocephalus malabaricus)",
     "description": "You have been bitten by a Malabar Pit Viper. It is a small snake commonly seen in the Western Ghats of Kerala, Goa and Karnataka.",
     "images": [
@@ -107,7 +107,7 @@
     "quizIndex": 15
   },
   "15": {
-    "newPosition": 10,
+    "path": [15, 13, 12, 10],
     "name": "Sea Snake",
     "description": "You have been bitten by a Sea Snake. All sea snakes are venomous and are identified from the characteristic paddle like flattened tails which helps the snake navigate and swim.",
     "images": [
