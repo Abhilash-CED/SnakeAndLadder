@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import authService from '../../src/services/authService';
-import { LogOut, User } from 'lucide-react';
+import { LogOut, User, LucideShield } from 'lucide-react';
 
 const Navbar = () => {
     const router = useRouter();
@@ -57,7 +57,7 @@ const Navbar = () => {
                         {/* Language Selector */}
                         <div className="relative">
                             <select
-                                className="bg-slate-800 text-white border border-slate-600 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none hover:bg-slate-700 transition"
+                                className="bg-slate-800 text-white font-medium border border-slate-600 rounded-md px-2 py-1 text-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none hover:bg-slate-700 transition"
                                 onChange={handleChangeLanguage}
                                 defaultValue="en"
                             >
@@ -79,10 +79,10 @@ const Navbar = () => {
                             <div className="flex items-center gap-4">
                                 {user.role === 'admin' && (
                                     <button
-                                        className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-red-600/20 text-red-400 hover:bg-red-600/30 transition border border-red-500/30 font-medium text-sm"
+                                        className="flex items-center gap-2 px-3 py-1 rounded-md bg-red-600/20 text-red-400 hover:bg-red-600/30 transition border border-red-500/30 font-medium text-sm"
                                         onClick={() => router.push('/admin')}
                                     >
-                                        <Shield />
+                                        <LucideShield />
                                         <span className="hidden sm:inline">{t('navbar_admin')}</span>
                                     </button>
                                 )}
@@ -96,7 +96,7 @@ const Navbar = () => {
                                 </div>
 
                                 <button
-                                    className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-700 hover:bg-slate-600 text-slate-300 transition text-sm font-medium"
+                                    className="flex items-center gap-2 px-3 py-1 rounded-md bg-slate-700 hover:bg-slate-600 text-slate-300 transition text-sm font-medium"
                                     onClick={handleLogout}
                                 >
                                     <LogOut />

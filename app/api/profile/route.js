@@ -1,5 +1,4 @@
-
-import { supabase } from '../../../lib/supabase';
+import { query, queryOne } from '../../../lib/mysql';
 import { verifyToken } from '../../../lib/auth';
 import { NextResponse } from 'next/server';
 
@@ -16,29 +15,26 @@ export async function GET(request) {
         if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
         // 1. Get User Details
-        const { data: userDetails, error: userError } = await supabase
-            .from('users')
-            .select('id, username, email, region, language, created_at')
-            .eq('id', user.id)
-            .single();
+        const userDetails = await queryOne(
+            'SELECT id, username, email, region, language, created_at FROM users WHERE id = ?',
+            [user.id]
+        );
 
-        if (userError) throw userError;
+        if (!userDetails) {
+            return NextResponse.json({ error: 'User not found' }, { status: 404 });
+        }
 
         // 2. Get Game History
-        const { data: history, error: historyError } = await supabase
-            .from('game_history')
-            .select('*')
-            .eq('player_id', user.id)
-            .order('played_at', { ascending: false })
-            .limit(10);
-
-        if (historyError) throw historyError;
+        const history = await query(
+            'SELECT * FROM game_history WHERE player_id = ? ORDER BY played_at DESC LIMIT 10',
+            [user.id]
+        );
 
         // 3. Get Stats
-        const { data: allGames } = await supabase
-            .from('game_history')
-            .select('result, moves')
-            .eq('player_id', user.id);
+        const allGames = await query(
+            'SELECT result, moves FROM game_history WHERE player_id = ?',
+            [user.id]
+        );
 
         const stats = {
             total_games: allGames?.length || 0,
@@ -61,16 +57,14 @@ export async function PUT(request) {
 
         const { region, language } = await request.json();
 
-        const { data, error } = await supabase
-            .from('users')
-            .update({ region, language })
-            .eq('id', user.id)
-            .select()
-            .single();
+        await query(
+            'UPDATE users SET region = ?, language = ? WHERE id = ?',
+            [region, language, user.id]
+        );
 
-        if (error) throw error;
+        const updatedUser = await queryOne('SELECT * FROM users WHERE id = ?', [user.id]);
 
-        return NextResponse.json({ message: 'Profile updated successfully', user: data });
+        return NextResponse.json({ message: 'Profile updated successfully', user: updatedUser });
     } catch (err) {
         console.error('Update Error:', err);
         return NextResponse.json({ error: 'Failed to update profile' }, { status: 500 });

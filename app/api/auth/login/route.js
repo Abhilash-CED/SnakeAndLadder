@@ -1,5 +1,4 @@
-
-import { supabase } from '../../../../lib/supabase';
+import { query, queryOne } from '../../../../lib/mysql';
 import { signToken } from '../../../../lib/auth';
 import bcrypt from 'bcryptjs';
 import { NextResponse } from 'next/server';
@@ -9,13 +8,9 @@ export async function POST(request) {
         const { email, password } = await request.json();
 
         // Find user by email
-        const { data: user, error } = await supabase
-            .from('users')
-            .select('*')
-            .eq('email', email)
-            .single();
+        const user = await queryOne('SELECT * FROM users WHERE email = ?', [email]);
 
-        if (error || !user) {
+        if (!user) {
             return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
         }
 
@@ -25,12 +20,6 @@ export async function POST(request) {
         if (!isValidPassword) {
             return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
         }
-
-        // Record Login History
-        // Note: In Next.js App Router, finding genuine IP might require headers inspection (x-forwarded-for)
-        // For now we'll skip IP or try to get it from headers if critical
-        // const ip = request.headers.get('x-forwarded-for') || 'unknown'; 
-        // await supabase.from('login_history').insert([{ user_id: user.id, ip_address: ip }]);
 
         // Generate JWT token
         const token = signToken({

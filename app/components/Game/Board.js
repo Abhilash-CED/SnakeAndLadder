@@ -15,7 +15,7 @@ const Board = ({ p1Position, p2Position }) => {
     }
 
     return (
-        <div className="aspect-square w-full max-w-[700px] bg-slate-800 rounded-lg shadow-2xl relative overflow-hidden border-4 border-slate-700 mx-auto">
+        <div className="aspect-square w-full bg-slate-800 rounded-lg shadow-2xl relative overflow-hidden border-4 border-slate-700 mx-auto">
             {/* Container for maintaining aspect ratio and relative positioning */}
             <div className="relative w-full h-full">
                 <img

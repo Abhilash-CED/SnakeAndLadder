@@ -1,5 +1,4 @@
-
-import { supabase } from '../../../../lib/supabase';
+import { query } from '../../../../lib/mysql';
 import { verifyToken } from '../../../../lib/auth';
 import { NextResponse } from 'next/server';
 
@@ -24,19 +23,12 @@ export async function POST(request) {
             ladders_climbed
         } = await request.json();
 
-        const { data, error } = await supabase
-            .from('game_history')
-            .insert([{
-                player_id: user.id,
-                opponent_name,
-                result,
-                moves,
-                duration_seconds,
-                snakes_hit: snakes_hit || 0,
-                ladders_climbed: ladders_climbed || 0
-            }]);
-
-        if (error) throw error;
+        await query(
+            `INSERT INTO game_history 
+             (player_id, opponent_name, result, moves, duration_seconds, snakes_hit, ladders_climbed) 
+             VALUES (?, ?, ?, ?, ?, ?, ?)`,
+            [user.id, opponent_name, result, moves, duration_seconds, snakes_hit || 0, ladders_climbed || 0]
+        );
 
         return NextResponse.json({ message: 'Game recorded successfully' }, { status: 201 });
     } catch (err) {

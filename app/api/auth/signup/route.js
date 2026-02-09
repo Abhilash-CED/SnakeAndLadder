@@ -1,5 +1,4 @@
-
-import { supabase } from '../../../../lib/supabase';
+import { query, queryOne } from '../../../../lib/mysql';
 import { signToken } from '../../../../lib/auth';
 import bcrypt from 'bcryptjs';
 import { NextResponse } from 'next/server';
@@ -9,11 +8,10 @@ export async function POST(request) {
         const { email, password, username } = await request.json();
 
         // Check if user already exists
-        const { data: existingUser } = await supabase
-            .from('users')
-            .select('*')
-            .or(`email.eq.${email},username.eq.${username}`)
-            .single();
+        const existingUser = await queryOne(
+            'SELECT * FROM users WHERE email = ? OR username = ?',
+            [email, username]
+        );
 
         if (existingUser) {
             return NextResponse.json(
@@ -26,20 +24,15 @@ export async function POST(request) {
         const passwordHash = await bcrypt.hash(password, 10);
 
         // Create user
-        const { data: newUser, error } = await supabase
-            .from('users')
-            .insert([
-                {
-                    username,
-                    email,
-                    password_hash: passwordHash,
-                },
-            ])
-            .select()
-            .single();
+        const result = await query(
+            'INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)',
+            [username, email, passwordHash]
+        );
 
-        if (error) {
-            console.error('Database Error:', error);
+        // Get the newly created user
+        const newUser = await queryOne('SELECT * FROM users WHERE id = ?', [result.insertId]);
+
+        if (!newUser) {
             return NextResponse.json({ error: 'Failed to create user' }, { status: 500 });
         }
 

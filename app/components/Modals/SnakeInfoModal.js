@@ -1,4 +1,5 @@
 'use client';
+import { X } from 'lucide-react';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -25,7 +26,7 @@ const SnakeInfoModal = ({ isOpen, snakeInfo, onClose }) => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onClick={onClose}>
             <div
-                className="bg-slate-900 border border-red-500/50 rounded-xl shadow-2xl max-w-2xl w-full overflow-hidden animate-in fade-in zoom-in duration-300"
+                className="max-h-[85vh] mt-6 bg-slate-900 border border-red-500/50 rounded-xl shadow-2xl max-w-2xl w-full overflow-y-auto animate-in fade-in zoom-in duration-300"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="bg-red-900/80 p-4 flex justify-between items-center border-b border-red-800">
@@ -34,7 +35,7 @@ const SnakeInfoModal = ({ isOpen, snakeInfo, onClose }) => {
                         onClick={onClose}
                         className="text-red-200 hover:text-white bg-red-950/50 hover:bg-red-800 rounded-lg px-3 py-1 transition"
                     >
-                        {t('common_close')}
+                        <X size={20} className='text-xl font-bold' />
                     </button>
                 </div>
 

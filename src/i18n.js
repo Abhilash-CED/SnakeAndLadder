@@ -137,6 +137,19 @@ const resources = {
       admin_movement_snakes_hit: 'Snakes Hit',
       admin_movement_ladders_climbed: 'Ladders Climbed',
       admin_loading: 'Loading...',
+
+      // Quiz
+      quiz_title_prefix: 'Quiz on',
+      quiz_next: 'Next',
+      quiz_submit: 'Submit',
+      quiz_question: 'Question',
+      quiz_error_select: 'Please select an answer',
+      quiz_completed: 'Quiz Completed',
+      quiz_percentage_correct: 'Percentage Correct',
+      quiz_details: 'Details',
+      quiz_your_answer: 'Your Answer',
+      quiz_correct_answer: 'Correct Answer',
+      quiz_finish: 'Finish',
     },
   },
   hi: {
@@ -270,6 +283,19 @@ const resources = {
       admin_movement_snakes_hit: 'साँपों ने काटा',
       admin_movement_ladders_climbed: 'सीढ़ी चढ़े',
       admin_loading: 'लोड हो रहा है...',
+
+      // Quiz
+      quiz_title_prefix: 'क्विज़',
+      quiz_next: 'अगला',
+      quiz_submit: 'सबमिट करें',
+      quiz_question: 'प्रश्न',
+      quiz_error_select: 'कृपया एक उत्तर चुनें',
+      quiz_completed: 'क्विज़ पूरा हुआ',
+      quiz_percentage_correct: 'प्रतिशत सही',
+      quiz_details: 'विवरण',
+      quiz_your_answer: 'आपका उत्तर',
+      quiz_correct_answer: 'सही उत्तर',
+      quiz_finish: 'समाप्त',
     },
   },
   kn: {
@@ -406,6 +432,19 @@ const resources = {
       admin_movement_snakes_hit: 'ಹಾವುಗಳ ಹೊಡೆತ',
       admin_movement_ladders_climbed: 'ಏಣಿಗಳ ಹತ್ತವಿಕೆ',
       admin_loading: 'ಲೋಡ್ ಆಗುತ್ತಿದೆ...',
+
+      // Quiz
+      quiz_title_prefix: 'ಪ್ರಶ್ನೋತ್ತರ',
+      quiz_next: 'ಮುಂದಿನ ಪ್ರಶ್ನೆ',
+      quiz_submit: 'ಸಲ್ಲಿಸು',
+      quiz_question: 'ಪ್ರಶ್ನೆ',
+      quiz_error_select: 'ದಯವಿಟ್ಟು ಒಂದು ಉತ್ತರವನ್ನು ಆರಿಸಿ',
+      quiz_completed: 'ಪ್ರಶ್ನೋತ್ತರ ಪೂರ್ಣಗೊಂಡಿದೆ',
+      quiz_percentage_correct: 'ಶೇಕಡಾ ಸರಿಯಾದ',
+      quiz_details: 'ವಿವರಗಳು',
+      quiz_your_answer: 'ನಿಮ್ಮ ಉತ್ತರ',
+      quiz_correct_answer: 'ಸರಿಯಾದ ಉತ್ತರ',
+      quiz_finish: 'ಮುಗಿಸು',
     },
   },
   ta: {
@@ -533,6 +572,19 @@ const resources = {
       admin_movement_snakes_hit: 'பாம்புகள் தாக்கியவை',
       admin_movement_ladders_climbed: 'ஏணிகள் ஏறியவை',
       admin_loading: 'ஏற்றப்படுகிறது...',
+
+      // Quiz
+      quiz_title_prefix: 'வினாடி வினா',
+      quiz_next: 'அடுத்த',
+      quiz_submit: 'சமர்ப்பி',
+      quiz_question: 'கேள்வி',
+      quiz_error_select: 'தயவுசெய்து ஒரு பதிலை தேர்ந்தெடுக்கவும்',
+      quiz_completed: 'வினாடி வினா முடிந்தது',
+      quiz_percentage_correct: 'சதவீதம் சரி',
+      quiz_details: 'விவரங்கள்',
+      quiz_your_answer: 'உங்கள் பதில்',
+      quiz_correct_answer: 'சரியான பதில்',
+      quiz_finish: 'முடிக்க',
     },
   },
   te: {
@@ -660,6 +712,19 @@ const resources = {
       admin_movement_snakes_hit: 'పాములు కొట్టినవి',
       admin_movement_ladders_climbed: 'మెట్లు ఎక్కినవి',
       admin_loading: 'లోడ్ అవుతోంది...',
+
+      // Quiz
+      quiz_title_prefix: 'క్విజ్',
+      quiz_next: 'తదుపరి',
+      quiz_submit: 'సమర్పించు',
+      quiz_question: 'ప్రశ్న',
+      quiz_error_select: 'దయచేసి ఒక సమాధానాన్ని ఎంచుకోండి',
+      quiz_completed: 'క్విజ్ పూర్తయింది',
+      quiz_percentage_correct: 'శాతం సరైన',
+      quiz_details: 'వివరాలు',
+      quiz_your_answer: 'మీ సమాధానం',
+      quiz_correct_answer: 'సరైన సమాధానం',
+      quiz_finish: 'ముగించు',
     },
   },
   bn: {
@@ -787,6 +852,19 @@ const resources = {
       admin_movement_snakes_hit: 'সাপের কামড়',
       admin_movement_ladders_climbed: 'সিঁড়ি চড়া',
       admin_loading: 'লোড হচ্ছে...',
+
+      // Quiz
+      quiz_title_prefix: 'কুইজ',
+      quiz_next: 'পরবর্তী',
+      quiz_submit: 'জমা দিন',
+      quiz_question: 'প্রশ্ন',
+      quiz_error_select: 'অনুগ্রহ করে একটি উত্তর নির্বাচন করুন',
+      quiz_completed: 'কুইজ সম্পন্ন হয়েছে',
+      quiz_percentage_correct: 'শতাংশ সঠিক',
+      quiz_details: 'বিবরণ',
+      quiz_your_answer: 'আপনার উত্তর',
+      quiz_correct_answer: 'সঠিক উত্তর',
+      quiz_finish: 'শেষ',
     },
   },
   mr: {
@@ -914,6 +992,19 @@ const resources = {
       admin_movement_snakes_hit: 'सापांचा दंश',
       admin_movement_ladders_climbed: 'शिडी चढले',
       admin_loading: 'लोड होत आहे...',
+
+      // Quiz
+      quiz_title_prefix: 'क्विझ',
+      quiz_next: 'पुढील',
+      quiz_submit: 'सबमिट करा',
+      quiz_question: 'प्रश्न',
+      quiz_error_select: 'कृपया एक उत्तर निवडा',
+      quiz_completed: 'क्विझ पूर्ण झाले',
+      quiz_percentage_correct: 'टक्केवारी बरोबर',
+      quiz_details: 'तपशील',
+      quiz_your_answer: 'तुमचे उत्तर',
+      quiz_correct_answer: 'बरोबर उत्तर',
+      quiz_finish: 'समाप्त',
     },
   },
   gu: {
@@ -1041,6 +1132,19 @@ const resources = {
       admin_movement_snakes_hit: 'સાપનો ડંખ',
       admin_movement_ladders_climbed: 'સીડી ચડ્યા',
       admin_loading: 'લોડ થઈ રહ્યું છે...',
+
+      // Quiz
+      quiz_title_prefix: 'ક્વિઝ',
+      quiz_next: 'આગળ',
+      quiz_submit: 'સબમિટ કરો',
+      quiz_question: 'પ્રશ્ન',
+      quiz_error_select: 'કૃપા કરીને એક જવાબ પસંદ કરો',
+      quiz_completed: 'ક્વિઝ પૂર્ણ થયું',
+      quiz_percentage_correct: 'ટકાવારી સાચી',
+      quiz_details: 'વિગતો',
+      quiz_your_answer: 'તમારો જવાબ',
+      quiz_correct_answer: 'સાચો જવાબ',
+      quiz_finish: 'સમાપ્ત',
     },
   },
   pa: {
@@ -1168,6 +1272,19 @@ const resources = {
       admin_movement_snakes_hit: 'ਸੱਪ ਨੇ ਕੱਟਿਆ',
       admin_movement_ladders_climbed: 'ਸੀੜ੍ਹੀ ਚੜ੍ਹੇ',
       admin_loading: 'ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...',
+
+      // Quiz
+      quiz_title_prefix: 'ਕੁਇਜ਼',
+      quiz_next: 'ਅਗਲਾ',
+      quiz_submit: 'ਜਮ੍ਹਾਂ ਕਰੋ',
+      quiz_question: 'ਪ੍ਰਸ਼ਨ',
+      quiz_error_select: 'ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਜਵਾਬ ਚੁਣੋ',
+      quiz_completed: 'ਕੁਇਜ਼ ਪੂਰਾ ਹੋਇਆ',
+      quiz_percentage_correct: 'ਪ੍ਰਤੀਸ਼ਤ ਸਹੀ',
+      quiz_details: 'ਵੇਰਵੇ',
+      quiz_your_answer: 'ਤੁਹਾਡਾ ਜਵਾਬ',
+      quiz_correct_answer: 'ਸਹੀ ਜਵਾਬ',
+      quiz_finish: 'ਸਮਾਪਤ',
     },
   },
   or: {
@@ -1295,11 +1412,24 @@ const resources = {
       admin_movement_snakes_hit: 'ସାପ କାମୁଡିଛି',
       admin_movement_ladders_climbed: 'ଡାଙ୍ଗ ଚଢିଛନ୍ତି',
       admin_loading: 'ଲୋଡ୍ ହେଉଛି...',
+
+      // Quiz
+      quiz_title_prefix: 'କ୍ୱିଜ୍',
+      quiz_next: 'ପରବର୍ତ୍ତୀ',
+      quiz_submit: 'ସବମିଟ୍ କରନ୍ତୁ',
+      quiz_question: 'ପ୍ରଶ୍ନ',
+      quiz_error_select: 'ଦୟାକରି ଏକ ଉତ୍ତର ବାଛନ୍ତୁ',
+      quiz_completed: 'କ୍ୱିଜ୍ ସମାପ୍ତ ହୋଇଛି',
+      quiz_percentage_correct: 'ଶତାଂଶ ସଠିକ୍',
+      quiz_details: 'ବିବରଣୀ',
+      quiz_your_answer: 'ଆପଣଙ୍କ ଉତ୍ତର',
+      quiz_correct_answer: 'ସଠିକ୍ ଉତ୍ତର',
+      quiz_finish: 'ସମାପ୍ତ',
     },
   },
   ml: {
     translation: {
-      app_title: 'പാമ്പും മേല്‍ക്കയറ്റവും',
+      app_title: 'പാമ്പും മേല്ക്കയറ്റവും',
 
       login_title: 'കളിക്കാന്‍ ലോഗിന്‍ ചെയ്യുക',
       login_email_placeholder: 'ഇമെയില്‍ വിലാസം',
@@ -1422,6 +1552,19 @@ const resources = {
       admin_movement_snakes_hit: 'പാമ്പ് കൊത്തിയത്',
       admin_movement_ladders_climbed: 'ഏണി കയറിയത്',
       admin_loading: 'ലോഡ് ചെയ്യുന്നു...',
+
+      // Quiz
+      quiz_title_prefix: 'ക്വിസ്',
+      quiz_next: 'അടുത്തത്',
+      quiz_submit: 'സമർപ്പിക്കുക',
+      quiz_question: 'ചോദ്യം',
+      quiz_error_select: 'ദയവായി ഒരു ഉത്തരം തിരഞ്ഞെടുക്കുക',
+      quiz_completed: 'ക്വിസ് പൂർത്തിയായി',
+      quiz_percentage_correct: 'ശതമാനം ശരി',
+      quiz_details: 'വിശദാംശങ്ങൾ',
+      quiz_your_answer: 'നിങ്ങളുടെ ഉത്തരം',
+      quiz_correct_answer: 'ശരിയായ ഉത്തരം',
+      quiz_finish: 'പൂർത്തിയാക്കുക',
     },
   },
 };

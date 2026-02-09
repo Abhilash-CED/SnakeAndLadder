@@ -79,14 +79,14 @@ export default function ProfilePage() {
                 <div className="fixed inset-0 bg-slate-900/90 -z-10"></div>
 
                 {/* Header */}
-                <div className="flex items-center justify-center gap-6 mb-12 relative z-10 animate-in fade-in slide-in-from-top-4 duration-500">
+                <div className="flex items-center justify-center p-4 gap-6 mb-6 relative z-10 animate-in fade-in slide-in-from-top-4 duration-500">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-4xl shadow-2xl mb-4 p-[2px]">
                         <div className="bg-slate-900 w-full h-full rounded-full flex items-center justify-center">
                             👤
                         </div>
                     </div>
                     <div className="flex flex-col items-start">
-                        <h1 className="text-4xl font-bold text-white mb-2">{user.username}</h1>
+                        <h1 className="text-4xl font-bold text-white">{user.username}</h1>
                         <p className="text-blue-300">{user.email}</p>
                         <p className="text-slate-500 text-sm mt-1">{t('profile_joined_prefix')} {new Date(user.created_at).toLocaleDateString()}</p>
                     </div>

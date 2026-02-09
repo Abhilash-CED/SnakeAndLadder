@@ -1,5 +1,5 @@
 
-import { supabase } from '../../../../lib/supabase';
+import { query, queryOne } from '../../../../lib/mysql';
 import { verifyToken } from '../../../../lib/auth';
 import { NextResponse } from 'next/server';
 
@@ -18,25 +18,15 @@ export async function GET(request) {
         if (!admin) return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
 
         // 1. Overview Stats - Total Users
-        const { count: totalUsers, error: usersError } = await supabase
-            .from('users')
-            .select('*', { count: 'exact', head: true });
-
-        if (usersError) throw usersError;
+        const usersResult = await queryOne('SELECT COUNT(*) as count FROM users');
+        const totalUsers = usersResult?.count || 0;
 
         // 2. Overview Stats - Total Games
-        const { count: totalGames, error: gamesError } = await supabase
-            .from('game_history')
-            .select('*', { count: 'exact', head: true });
-
-        if (gamesError) throw gamesError;
+        const gamesResult = await queryOne('SELECT COUNT(*) as count FROM game_history');
+        const totalGames = gamesResult?.count || 0;
 
         // 3. Regional Stats
-        const { data: regionalStats, error: regionError } = await supabase
-            .from('users')
-            .select('region');
-
-        if (regionError) throw regionError;
+        const regionalStats = await query('SELECT region FROM users');
 
         const regions = regionalStats.reduce((acc, curr) => {
             const region = curr.region || 'Unknown';
@@ -45,11 +35,9 @@ export async function GET(request) {
         }, {});
 
         // 4. Movement Stats
-        const { data: movementData, error: movementError } = await supabase
-            .from('game_history')
-            .select('snakes_hit, ladders_climbed, moves, result');
-
-        if (movementError) throw movementError;
+        const movementData = await query(
+            'SELECT snakes_hit, ladders_climbed, moves, result FROM game_history'
+        );
 
         const movement = {
             total_snakes: 0,
@@ -72,13 +60,13 @@ export async function GET(request) {
         const sevenDaysAgo = new Date();
         sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-        const { data: loginHistory, error: loginError } = await supabase
-            .from('login_history')
-            .select('login_time')
-            .gte('login_time', sevenDaysAgo.toISOString());
+        const loginHistory = await query(
+            'SELECT login_time FROM login_history WHERE login_time >= ?',
+            [sevenDaysAgo.toISOString().slice(0, 19).replace('T', ' ')]
+        );
 
         let loginsByDay = {};
-        if (!loginError && loginHistory) {
+        if (loginHistory) {
             loginsByDay = loginHistory.reduce((acc, curr) => {
                 const date = new Date(curr.login_time).toLocaleDateString();
                 acc[date] = (acc[date] || 0) + 1;

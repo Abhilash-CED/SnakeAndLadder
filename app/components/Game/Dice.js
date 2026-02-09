@@ -44,7 +44,7 @@ const Dice = ({ player, value = 1, rolling, isActive, onRoll, disabled, showArro
                 onClick={!disabled ? onRoll : null}
                 className={`
             w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-300 rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.5),inset_0_-5px_10px_rgba(0,0,0,0.2)] 
-            relative cursor-pointer transition-transform duration-500 transform-style-3d
+            relative cursor-pointer transition-transform duration-500 transform-style-3d animate-bounce 
             ${rolling ? 'animate-spin' : ''} 
             ${disabled ? 'cursor-not-allowed grayscale' : 'hover:scale-105 active:scale-95'}
             border-2 border-gray-400

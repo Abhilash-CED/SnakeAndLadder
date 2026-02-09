@@ -50,7 +50,7 @@ export const useGameLogic = (onLadderClimb) => {
         for (let i = 0; i < steps; i++) {
             pos += 1;
             updatePlayerPosition(playerNum, pos);
-            await delay(300); // 🎯 dice speed
+            await delay(200); // 🎯 dice speed
         }
 
         return pos;

@@ -168,7 +168,7 @@ export default function GamePage() {
 
             setDiceRolling(false);
             makeMove(rolledValue);
-        }, 1000);
+        }, 500);
     };
 
     const handleResetGame = async () => {
@@ -287,23 +287,20 @@ export default function GamePage() {
                 )}
 
                 {/* Left Side: Board */}
-                <div className="flex-grow w-full max-w-[600px] flex-shrink-0">
+                <div className="flex-grow w-full max-w-[85vh] flex-shrink-0">
                     <Board p1Position={p1sum} p2Position={p2sum} />
                 </div>
 
                 {/* Right Side: Controls & Players */}
                 {gameStarted && (
-                    <div className="w-full lg:w-96 flex flex-col gap-6 bg-slate-800/80 backdrop-blur p-6 rounded-xl border border-slate-700 shadow-xl">
+                    <div className="w-full max-h-[75vh] lg:w-96 flex flex-col gap-6 bg-slate-800/80 backdrop-blur p-6 rounded-xl border border-slate-700 shadow-xl">
                         {/* Player 1 Card */}
-                        <div className={`p-4 rounded-lg flex items-center justify-between transition-all ${currentTurn === 1 ? 'bg-blue-600 shadow-lg scale-105 ring-2 ring-blue-400' : 'bg-slate-700 opacity-80'}`}>
+                        <div className={`p-2 rounded-lg flex items-center justify-between transition-all ${currentTurn === 1 ? 'bg-blue-600 shadow-lg scale-105 ring-2 ring-blue-400' : 'bg-slate-700 opacity-80'}`}>
                             <div className="flex items-center gap-4">
-                                <div className="text-3xl bg-white/20 p-2 rounded-full">👤</div>
-                                <div>
-                                    <div className="font-bold text-white">{player1}</div>
-                                    <div className="text-xs text-blue-200">Position: {p1sum}</div>
-                                </div>
+                                <div className="text-2xl bg-white/20 p-2 rounded-md">#1</div>
+                                <div className="font-bold text-white">{player1}</div>
                             </div>
-                            <div className="text-2xl font-bold text-white/50">#1</div>
+                            <div className="text-sm text-white/50 flex items-center gap-2">Position: <span className="text-2xl font-bold text-white">{p1sum}</span></div>
                         </div>
 
                         {/* Dice Area */}
@@ -332,15 +329,12 @@ export default function GamePage() {
                         </div>
 
                         {/* Player 2 Card */}
-                        <div className={`p-4 rounded-lg flex items-center justify-between transition-all ${currentTurn === 2 ? 'bg-red-600 shadow-lg scale-105 ring-2 ring-red-400' : 'bg-slate-700 opacity-80'}`}>
+                        <div className={`p-2 rounded-lg flex items-center justify-between transition-all ${currentTurn === 2 ? 'bg-red-600 shadow-lg scale-105 ring-2 ring-red-400' : 'bg-slate-700 opacity-80'}`}>
                             <div className="flex items-center gap-4">
-                                <div className="text-3xl bg-white/20 p-2 rounded-full">🤖</div>
-                                <div>
-                                    <div className="font-bold text-white">{player2}</div>
-                                    <div className="text-xs text-red-200">Position: {p2sum}</div>
-                                </div>
+                                <div className="text-2xl bg-white/20 p-2 rounded-md">#2</div>
+                                <div className="font-bold text-white">{player2}</div>
                             </div>
-                            <div className="text-2xl font-bold text-white/50">#2</div>
+                            <div className="text-sm text-white/50 flex items-center gap-2">Position: <span className="text-2xl font-bold text-white">{p2sum}</span></div>
                         </div>
 
                         {/* Exit Button */}
@@ -348,7 +342,7 @@ export default function GamePage() {
                             onClick={handleResetGame}
                             className="mt-auto w-full py-3 bg-slate-700 hover:bg-slate-600 text-slate-300 font-bold rounded-lg transition text-sm uppercase tracking-wide border border-slate-600"
                         >
-                            Exit Game
+                            {t('game_exit_button_label')}
                         </button>
                     </div>
                 )}

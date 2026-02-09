@@ -84,7 +84,7 @@ const SnakeQuizModal = ({ isOpen, snakeName, questions, onClose, onComplete }) =
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-            <div className="bg-slate-800 border-2 border-yellow-600 rounded-xl shadow-2xl max-w-2xl w-full text-white animate-in fade-in zoom-in duration-300 overflow-hidden flex flex-col max-h-[90vh]">
+            <div className="max-h-[90vh] mt-16 bg-slate-800 border-2 border-yellow-600 rounded-xl shadow-2xl max-w-2xl w-full text-white animate-in fade-in zoom-in duration-300 overflow-hidden flex flex-col">
                 <div className="bg-gradient-to-r from-yellow-700 to-yellow-900 p-4 border-b border-yellow-600">
                     <h3 className="text-xl font-bold flex items-center gap-2">
                         <span>❓</span>
@@ -96,7 +96,7 @@ const SnakeQuizModal = ({ isOpen, snakeName, questions, onClose, onComplete }) =
                     {!showResult ? (
                         <>
                             <div className="text-sm text-yellow-500 font-bold mb-4 uppercase tracking-wider">
-                                {t('quiz_question_count', { current: currentQuestion + 1, total: questions.length })}
+                                {t('quiz_question')} {currentQuestion + 1} / {questions.length}
                             </div>
 
                             <div className="text-xl font-medium mb-6 bg-slate-900/50 p-4 rounded-lg border border-slate-700">
@@ -137,15 +137,15 @@ const SnakeQuizModal = ({ isOpen, snakeName, questions, onClose, onComplete }) =
                             </div>
                         </>
                     ) : (
-                        <div className="text-center space-y-6">
-                            <div className="bg-slate-700/50 rounded-xl p-8 border border-slate-600">
-                                <h4 className="text-3xl font-bold text-white mb-2">{t('quiz_completed')}</h4>
-                                <div className="text-5xl font-black text-yellow-400 my-4 shadow-yellow-500/20 drop-shadow-lg">
+                        <div className="text-center space-y-2">
+                            <div className="bg-slate-700/50 rounded-xl p-4 border border-slate-600">
+                                <h4 className="text-2xl font-bold text-white mb-2">{t('quiz_completed')}</h4>
+                                <div className="text-2xl font-black text-yellow-400 my-2 shadow-yellow-500/20 drop-shadow-lg">
                                     {score} / {questions.length}
                                 </div>
                                 <div className={`text-xl font-bold px-4 py-2 rounded-full inline-block ${(score / questions.length) >= 0.7 ? 'bg-green-600/20 text-green-400' : 'bg-red-600/20 text-red-400'
                                     }`}>
-                                    {Math.round((score / questions.length) * 100)}% {t('quiz_percentage_correct')}
+                                    {Math.round((score / questions.length) * 100)}%
                                 </div>
                             </div>
 
